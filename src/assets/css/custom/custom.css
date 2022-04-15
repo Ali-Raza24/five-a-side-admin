@@ -1,0 +1,15 @@
+@import './sidebar.css';
+@import './venues.css';
+
+
+.fc-event {
+    cursor: pointer;
+}
+
+.fc.fc-ltr.fc-unthemed {
+    padding-left: 7px;
+}
+
+.fc-time-grid .fc-slats td {
+    height: 3.5rem !important;
+}

@@ -1,0 +1,39 @@
+.select-label {
+    color: #AAAAAA !important;
+}
+.select-county:hover:not(.MuiInput-disabled-228):not(.MuiInput-focused-227):not(.MuiInput-error-230):before {
+    border-color: #D2D2D2 !important;
+    border-width: 1px !important;
+}
+.select-county:before {
+    border-color: #D2D2D2 !important;
+    border-width: 1px !important;
+}
+.select-county:after {
+    border-bottom: 2px solid #3592c8!important;
+}
+.action-buttons-wrap {
+    display: flex;
+    justify-content: space-around;
+}
+.my-input > div:after {
+    border-bottom: 2px solid #3592c8;
+}
+
+.example-enter {
+    opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 250ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
