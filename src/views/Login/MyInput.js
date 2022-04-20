@@ -16,7 +16,7 @@ class MyInput extends Component {
       <React.Fragment>
         <div className="form-group position-relative">
           <input
-            type={"password"}
+            type={type}
             name={name}
             className="form-control"
             value={value}
