@@ -27,13 +27,13 @@ class Login extends Component {
 
   componentDidUpdate(prevProps) {
     //  TODO: Only send token to admin app if the user is venue manager or admin (dont send token is the user is player)
-    if (this.props.user) {
-      const token = localStorage.getItem("token");
-      this.iFrame.current.contentWindow.postMessage(
-        JSON.stringify({ key: "token", method: "set", data: token }),
-        "*"
-      );
-    }
+    // if (this.props.user) {
+    //   const token = localStorage.getItem("token");
+    //   this.iFrame.current.contentWindow.postMessage(
+    //     JSON.stringify({ key: "token", method: "set", data: token }),
+    //     "*"
+    //   );
+    // }
   }
 
   handleInputChange(event) {

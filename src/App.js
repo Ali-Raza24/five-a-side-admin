@@ -32,7 +32,7 @@ class App extends Component {
         });
       })
       .catch((err) => {
-        this.setState({ showSpinner: false });
+        this.setState((prev) => ({ ...prev, showSpinner: false }));
         // this.setState({ unauthenticated: true, showSpinner: false })
       });
   }
