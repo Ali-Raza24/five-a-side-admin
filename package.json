@@ -1,7 +1,5 @@
 {
   "name": "five-admin",
-  "version": "1.5.0",
-  "homepage": ".",
   "description": "Admin dashboard",
   "private": false,
   "main": "dist/index.js",
@@ -14,8 +12,11 @@
     "@fullcalendar/interaction": "^4.1.0",
     "@fullcalendar/react": "^4.1.0",
     "@fullcalendar/resource-timegrid": "^4.1.0",
-    "@material-ui/core": "4.0.1",
-    "@material-ui/pickers": "^3.2.2",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@material-ui/pickers": "^3.3.10",
+    "@material-ui/styles": "^4.11.5",
+    "@material-ui/utils": "^4.11.3",
     "@tinymce/tinymce-react": "^3.3.0",
     "@types/googlemaps": "3.30.13",
     "@types/markerclustererplus": "2.1.33",
@@ -62,7 +63,7 @@
   "bugs": {
     "url": "https://github.com/creativetimofficial/material-dashboard-react/issues"
   },
-  "homepage": "http://admin.five.stage.softelm.com/",
+  "homepage": ".",
   "optionalDependencies": {
     "babel-eslint": "7.2.3",
     "eslint": "4.19.1",
