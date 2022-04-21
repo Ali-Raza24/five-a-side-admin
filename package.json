@@ -1,6 +1,7 @@
 {
   "name": "five-admin",
   "version": "1.5.0",
+  "homepage": ".",
   "description": "Admin dashboard",
   "private": false,
   "main": "dist/index.js",
