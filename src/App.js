@@ -1,70 +1,90 @@
 import "./assets/css/material-dashboard-react.css";
 import indexRoutes from "./routes/index.jsx";
-import React, { Component } from "react";
-import { Router, Route, Switch, withRouter } from "react-router-dom";
+import React, { Component, useEffect, useState } from "react";
+import { Route, Switch, useHistory } from "react-router-dom";
 import "./index.css";
 import Dashboard from "./layouts/Dashboard/Dashboard";
-import config from "./config";
 import AuthService from "./services/AuthService";
 import AdminDashboard from "./layouts/AdminDashboard/AdminDashboard";
 import Login from "./views/Login/Login";
 import BigSpinner from "./components/_shared/BigSpinner";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.authService = new AuthService();
-    this.state = {
-      unauthenticated: false,
-      roleId: null,
-      showSpinner: true,
-    };
-  }
+const authService = new AuthService();
+function App(props) {
+  const [state, setState] = useState({
+    unauthenticated: false,
+    roleId: null,
+    user: null,
+    showSpinner: true,
+  });
+  const history = useHistory();
 
-  componentDidMount() {
-    this.authService
+  useEffect(() => {
+    authService
       .me()
       .then((response) => {
-        this.setState({
+        // roleId: response.data.user.role_id,
+        //           user: response.data.user,
+        //           showSpinner: false,
+        setState({
+          ...state,
           roleId: response.data.user.role_id,
           user: response.data.user,
           showSpinner: false,
+          unauthenticated: false,
         });
+        history.push("/dashboard");
       })
       .catch((err) => {
-        this.setState((prev) => ({ ...prev, showSpinner: false }));
-        // this.setState({ unauthenticated: true, showSpinner: false })
+        setState({
+          ...state,
+          showSpinner: false,
+          unauthenticated: true,
+        });
       });
+    history.push("/login");
+  }, []);
+
+  function login(user) {
+    setState({
+      ...state,
+      user,
+      roleId: user.role_id,
+    });
   }
 
-  renderRoutes = (routeProps) => {
-    if (!this.state.roleId || this.state.unauthenticated) {
-      return <Route path={"/login"} component={Login} />;
-    } else if (this.state.roleId === 2) {
-      return <Dashboard {...routeProps} user={this.state.user} />;
-    } else if (this.state.roleId === 3) {
-      return <AdminDashboard {...routeProps} user={this.state.user} />;
+  const renderRoutes = (routeProps) => {
+    if (state.roleId === 2) {
+      return <Dashboard {...routeProps} user={state.user} />;
+    } else if (state.roleId === 3) {
+      return <AdminDashboard {...routeProps} user={state.user} />;
     }
+
+    return (
+      <Route
+        path={"/login"}
+        render={(props) => <Login {...props} loginUser={login} />}
+      />
+    );
   };
 
-  render() {
-    if (this.state.showSpinner) {
-      return <BigSpinner />;
-    }
-    return (
-      <Switch>
-        {indexRoutes.map((prop, key) => {
-          return (
-            <Route
-              path={prop.path}
-              key={key}
-              render={(routeProps) => this.renderRoutes(routeProps)}
-            />
-          );
-        })}
-      </Switch>
-    );
+  if (state.showSpinner) {
+    return <BigSpinner />;
   }
+
+  return (
+    <Switch>
+      {indexRoutes.map((prop, key) => {
+        return (
+          <Route
+            path={prop.path}
+            key={key}
+            render={(routeProps) => renderRoutes(routeProps)}
+          />
+        );
+      })}
+    </Switch>
+  );
 }
 
-export default withRouter(App);
+export default App;

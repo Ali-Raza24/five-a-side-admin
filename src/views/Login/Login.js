@@ -19,9 +19,10 @@ class Login extends Component {
   }
 
   componentDidMount() {
+    document.title = "Login";
     window.addEventListener("message", this.handleFrameTasks);
     if (this.props.user) {
-      this.props.history.push("/");
+      this.props.history.push("/dashboard");
     }
   }
 
@@ -88,7 +89,7 @@ class Login extends Component {
           user.password
         );
         const data = response.data;
-        console.log(data);
+        this.props.loginUser(data.user);
         localStorage.setItem("token", data.authorization.access_token);
         this.props.history.push("/dashboard");
       } catch (error) {
@@ -99,7 +100,6 @@ class Login extends Component {
   }
 
   render() {
-    console.log(this.props);
     const renderButton = this.props.loginRequest ? (
       <div style={{ maxWidth: 325 }}>
         <BigSpinner width={45} customClasses="d-flex justify-content-center" />
