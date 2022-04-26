@@ -1,1 +1,205 @@
 @import "assets/css/custom/custom.css";
+*{
+    box-sizing: border-box;}
+
+input::placeholder {
+    font-weight: 500 !important;
+}
+
+input {
+    font-weight: 500 !important;
+}
+
+input.form-control {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 0px !important;
+    font-weight: 400 !important;
+    font-size: 14px;
+    color: #000000;
+    height: 38px;
+    border-color: #BCE0FD;
+    padding: .375rem .75rem;
+    color: #495057;
+}
+
+input.form-control:focus {
+    border-color: #2684FF;
+    outline: none;
+    box-shadow: 0 0 0 1px #2684FF;
+}
+
+input.form-control::placeholder {
+    font-weight: 400 !important;
+    color: #495057;
+    font-size: 14px;
+}
+
+/************** Login/Register *****************/
+.auth-background {
+    background-image: url('../src/assets/img/blue-background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.auth-container {
+    height: 100vh;
+    padding: 10% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form-wrap {
+    max-width: 325px;
+    margin: 0 auto;
+}
+
+.login-form-wrap .button-big:hover {
+    background: #0057C8;
+}
+
+.login-form-wrap h1 {
+    font-family: "Avenir", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #FFFFFF;
+}
+
+.login-form-wrap input {
+    height: 45px;
+    border-radius: 0px;
+    font-family: "Avenir", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+}
+
+.login-form-wrap input::placeholder {
+    font-family: "Avenir", sans-serif;
+    color: #000000;
+    font-weight: 500;
+}
+
+.app-login-wrap {
+    padding-bottom: 35px;
+}
+
+.submit-button {
+    text-align: left;
+}
+
+.submit-button button {
+    margin: 0;
+    width: 325px;
+    height: 45px;
+    border-radius: 0px;
+    background: #1876F0;
+    padding: 0;
+    border: none;
+    color: #FFFFFF;
+}
+
+.submit-button {
+    padding-top: 20px;
+    margin-bottom: 5px;
+}
+
+.register-terms {
+    padding-top: 35px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Avenir", sans-serif;
+}
+
+.register-terms a {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 14px;
+    font-family: "Avenir", sans-serif;
+    text-decoration: underline !important;
+}
+
+.register-error {
+    color: red;
+    font-size: 16px;
+    font-family: "Avenir", sans-serif;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.register-success {
+    color: #ffffff;
+    padding: 10px;
+    font-family: "Avenir", sans-serif;
+}
+
+.extra-links a {
+    font-family: "Avenir", sans-serif;
+    color: #ffffff;
+    text-decoration: underline !important;
+    font-size: 16px;
+}
+
+.social-login-container {
+    padding-top: 35px;
+}
+
+.my-facebook-button-class {
+    width: 100%;
+    background: #1876f0;
+    border: none;
+    color: #ffffff;
+    font-family: "Avenir", sans-serif;
+    height: 45px;
+}
+
+.my-facebook-button-class img {
+    padding-right: 22px;
+}
+
+.custom-google-button {
+    width: 100%;
+    background: #ffffff;
+    border: none;
+    color: #000000;
+    font-family: "Avenir", sans-serif;
+    height: 45px;
+}
+
+.custom-google-button img {
+    padding-right: 22px;
+}
+
+.show-password {
+    position: absolute;
+    width: 26px;
+    top: 15px;
+    right: 11px;
+}
+
+.hide-password {
+    position: absolute;
+    width: 30px;
+    top: 11px;
+    right: 11px;
+}
+
+.forgot-password-wrap > p {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 30px 0;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+
+    .auth-container .col-md-6 {
+        border: none !important;
+    }
+}

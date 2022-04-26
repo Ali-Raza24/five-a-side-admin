@@ -116,9 +116,8 @@ class Login extends Component {
           <div className="row">
             <div
               className="col-md-6 d-flex flex-column align-items-center"
-              style={{ borderRight: "1px solid #ffffff" }}
             >
-              <h1 style={{ color: "#ffffff" }}>We are football</h1>
+              <h1 style={{ color: "#ffffff", textAlign: 'center' }}>We are football</h1>
             </div>
             <div className="col-md-6">
               <div className="login-form-wrap">
@@ -156,21 +155,21 @@ class Login extends Component {
                         </p>
                       </div>
                     )}
-                    <div className="pt-3 extra-links">
+                    {/* <div className="pt-3 extra-links">
                       <Link to="/forgot-password">Forgot password?</Link>
                     </div>
                     <div className="register-error">
                       {this.props.loginFail && (
                         <p className="m-0">{this.props.loginFail}</p>
                       )}
-                    </div>
+                    </div> */}
                   </div>
 
-                  <div className="extra-links" style={{ paddingTop: 25 }}>
+                  {/* <div className="extra-links" style={{ paddingTop: 25 }}>
                     <Link to="/register" className="link-default">
                       No account? Register new one here
                     </Link>
-                  </div>
+                  </div> */}
                 </form>
               </div>
             </div>
